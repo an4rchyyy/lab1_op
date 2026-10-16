@@ -1,0 +1,20 @@
+const mixedArray = [
+  true, 'hello', 42, 'world', false, 
+  3.14, 'js', true, -100, 'code', 
+  { name: 'Ivan' }, [1, 2, 3], null, '2026'
+];
+
+const dynamicCollection = {};
+
+for (const item of mixedArray) {
+  const itemType = typeof item;
+  
+  if (dynamicCollection[itemType] === undefined) {
+    dynamicCollection[itemType] = 0;
+  }
+  
+  dynamicCollection[itemType]++;
+}
+
+console.log("результат з дин. додаванням ключів:");
+console.dir(dynamicCollection);
